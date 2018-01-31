@@ -44,7 +44,6 @@ public class CustomerConfig {
     @Scope("prototype")
     public FlatFileItemReader<Customer> reader(){
         FlatFileItemReader<Customer> input = new FlatFileItemReader<>();
-        //  input.setStrict(false);
         input.setResource(new ClassPathResource("Sample.csv"));
         input.setLineMapper(new DefaultLineMapper<Customer>(){{
             setLineTokenizer(productLineTokenizer());
